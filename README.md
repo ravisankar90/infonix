@@ -1,2 +1,2 @@
 # Infonix
-Infonix is a py program which displays information about your linux machine.
+Infonix is a python program which displays information about your linux machine.
