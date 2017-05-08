@@ -20,7 +20,8 @@ import commands
 #whether - Whether from wttr.in
 
 
-host  = commands.getoutput("hostname")
+global ospretty
+host = commands.getoutput("hostname")
 load = commands.getoutput("cat /proc/loadavg")
 cpu = commands.getoutput("ps -eo pcpu | awk 'NR>1' | awk '{tot=tot+$1} END {print tot}'")
 cores = commands.getoutput("cat /proc/cpuinfo | grep -c processor")
@@ -36,6 +37,7 @@ whether = commands.getoutput("curl --silent wttr.in | head -n 7")
 ipsint = commands.getoutput("hostname -I")
 ipinternal = ipsint.split(" ")
 ipexternal = commands.getoutput("dig +short myip.opendns.com @resolver1.opendns.com")
+	
 
 def printfull():
 
@@ -55,6 +57,5 @@ def printfull():
 	print "Logged in Users		  = "+usernames,usersrc
 	print whether
 	
-
 printfull()
 
